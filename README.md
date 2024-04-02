@@ -21,7 +21,8 @@ $  args = parser.parse_args(['--cfg',"configs/DrugBAN.yaml",'--data','bindingdb'
 $  args = parser.parse_args(['--cfg',"configs/DrugBAN.yaml",'--data','biosnap','--split','random'])
 ```
 
-Then, you can directly run the following command. 
+Then, you can directly run the following command with one or two GPUs. 
 ```
+$ torchrun --standalone --nproc_per_node=1 main.py
 $ torchrun --standalone --nproc_per_node=2 main.py
 ```
